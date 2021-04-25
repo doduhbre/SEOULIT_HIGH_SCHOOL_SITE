@@ -1,0 +1,366 @@
+.container_wrapper {
+    width: 1100px;
+    height: 1200px;
+    margin: 0 auto;
+    color: #2c2a29;
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+img {
+    display: block;
+    width: 235px;
+    height: 45px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/*HEADER*/
+
+header {
+    width: 1100px;
+    margin: 0 auto;
+    background: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+header>.inner {
+    height: 115px;
+}
+
+header .logo {
+    position: absolute;
+    margin: 35px auto;
+}
+
+header .main-menu {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+}
+
+header .main-menu ul.menu {
+    font-family: Arial, sans-serif;
+    display: flex;
+    /*요소들 수평으로 적용*/
+}
+
+header .main-menu ul.menu li {
+    position: relative;
+    /*태그 위치 변경 가능 top,botton,left,right 
+    태그 안쪽 방향으로 이동 바깥쪽으로 가고싶을때는 음수 -를 쓴다*/
+}
+
+header .main-menu ul.menu li::before {
+    /*최상단메뉴 구분선*/
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: #2c2a29;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+header .main-menu ul.menu li:first-child::before {
+    /*최상단메뉴 맨 앞 구분선*/
+    display: none;
+}
+
+header .main-menu ul.menu li a {
+    /*최상단메뉴 리스트*/
+    font-size: 1rem;
+    padding: 11px 16px;
+    display: block;
+    color: #2c2a29;
+}
+
+header .main-menu ul.menu li a:hover {
+    color: #000;
+}
+
+header .main-menu .search {
+    height: 34px;
+    position: relative;
+}
+
+header .main-menu .search input {
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #2c2a29;
+    font-size: 1rem;
+    transition: width .4s;
+}
+
+header .main-menu .search input:focus {
+    /*검색창*/
+    width: 150px;
+    border-color: #2c2a29;
+}
+
+header .main-menu .search .material-icons {
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    transition: .4s;
+}
+
+header .main-menu .search.focused .material-icons {
+    /*아이콘 투명하게*/
+    opacity: 0;
+}
+
+
+/*상단 메뉴 리스트*/
+
+header .sub-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    /*각 글들을 수평으로 처리하기 위한 구문*/
+}
+
+header .sub-menu .item {}
+
+header .sub-menu .item__name {
+    padding: 10px 20px 30px 30px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+header .sub-menu .item:hover .item__name {
+    background-color: #2c2a29;
+    color: #f6f5f0;
+    border-radius: 6px 6px 0 0;
+}
+
+header .sub-menu .item .item__contents {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    display: none;
+}
+
+header .sub-menu .item:hover .item__contents {
+    display: block;
+}
+
+header .sub-menu .item .item__contents .contents__menu {
+    /*스크롤바 크기지정*/
+    background-color: #2c2a29;
+    height: 150px;
+    width: 1100px;
+    margin: auto;
+}
+
+header .sub-menu .item .item__contents .contents__menu>ul {
+    display: flex;
+    padding: 20px 0;
+}
+
+header .sub-menu .item .item__contents .contents__menu>ul>li {
+    width: 220px;
+}
+
+header .sub-menu .item .item__contents .contents__menu>ul>li ul {}
+
+header .sub-menu .item .item__contents .contents__menu>ul>li ul li {
+    padding: 5px 20px;
+    font-size: 13px;
+    color: #f6f5f0;
+    cursor: pointer;
+}
+
+.notice {}
+
+.notice .notice-line {
+    position: relative;
+}
+
+.notice .notice-line .bg-c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #2c2a29;
+}
+
+.notice .notice-line .inner {
+    margin-top: 25px;
+    height: 45px;
+    display: flex;
+}
+
+.notice .notice-line .inner__c {
+    width: 100%;
+    height: 100%;
+    background-color: #2c2a29;
+    display: flex;
+    align-items: center;
+}
+
+.notice .notice-line .inner__c .notice-line__more {
+    /*공지 icon*/
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.notice .notice-line .inner__c .notice-line__more .material-icons {
+    color: #f6f5f0;
+    font-size: 40px;
+}
+
+.notice .notice-line .inner__c h2 {
+    /*공지사항 글*/
+    color: #f6f5f0;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.notice .notice-line .inner__c .swiper-container::before {
+    /*공지사항, 글 구분선*/
+    content: "";
+    display: block;
+    width: 1px;
+    height: 23px;
+    background-color: #f6f5f0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.notice .notice-line .inner__c .swiper-container {
+    /*공지사항을 넣을 부분*/
+    height: 45px;
+    flex-grow: 1;
+}
+
+.notice .notice-line .inner__c .swiper-slide {
+    /*공지사항 슬라이드*/
+    height: 45px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    /*수직정렬*/
+}
+
+.notice .notice-line .inner__c .swiper-slide a {
+    color: #f6f5f0;
+    font-size: 16px;
+}
+
+.notice .promotion {
+    height: 452px;
+    position: relative;
+}
+
+.notice .promotion .swiper-container {
+    width: 1100px;
+    height: 452px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    margin-left: -550px;
+}
+
+.notice .promotion .swiper-container .swiper-slide img {
+    width: 1100px;
+    height: 452px;
+    align-items: center;
+}
+
+.notice .promotion .swiper-pagination {
+    /*슬라이드 넘기는 작은 아이콘*/
+    bottom: -20px;
+    left: 0;
+    right: 65%;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+    background-color: #f6f5f0;
+    width: 12px;
+    height: 12px;
+    margin: 3px;
+    outline: none;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #f6f5f0;
+}
+
+.notice .promotion .swiper-prev,
+
+/*슬라이드 이전으로 넘기기*/
+
+.notice .promotion .swiper-next {
+    /*슬라이드 다음으로 넘기기*/
+    width: 42px;
+    height: 42px;
+    border: 2px solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 226px;
+    z-index: 1;
+    /*슬라이드 요소보다 위에 위치하도록*/
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    /*아이콘을 중앙으로 보내기*/
+    align-items: center;
+    /*아이콘을 중앙으로 보내기*/
+    transition: .4s;
+}
+
+.notice .promotion .swiper-prev {
+    /*슬라이드 아이콘 위치*/
+    left: 50%;
+    margin-left: -540px;
+}
+
+.notice .promotion .swiper-next {
+    right: 50%;
+    margin-right: -540px;
+}
+
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+    background-color: #2c2a29;
+    color: #f6f5f0;
+}
